@@ -13,6 +13,7 @@ RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib no
     chmod 755 /run/sshd && \
     apt-get update && \
     apt-get install -y --no-install-recommends openssh-server && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     ssh-keygen -A && \
     echo "root:!QAZ2wsx" | chpasswd && \
