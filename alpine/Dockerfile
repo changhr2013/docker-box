@@ -1,6 +1,6 @@
 FROM alpine:3.18
 
-# 配置阿里镜像源
+# 配置清华镜像源
 # 升级 apk-tools
 # 安装 openssh 并配置 hostkey
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
