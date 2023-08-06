@@ -5,7 +5,7 @@ FROM alpine:3.18
 # 安装 openssh 并配置 hostkey
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
     apk upgrade --no-cache apk-tools && \
-    apk add --no-cache openssh && \ 
+    apk add --no-cache openssh bash && \ 
     ssh-keygen -A && \
     echo "root:!QAZ2wsx" | chpasswd && \
     sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
