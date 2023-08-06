@@ -6,6 +6,7 @@ FROM alpine:3.18
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
     apk upgrade --no-cache apk-tools && \
     apk add --no-cache openssh bash && \ 
+    rm -rf /var/cache/apk/* && \
     ssh-keygen -A && \
     echo "root:!QAZ2wsx" | chpasswd && \
     sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
